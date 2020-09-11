@@ -19,10 +19,10 @@
                 "unit":"NUM"
             },
 	    {
-		    "name":"model_id",
-		    "description": "UUID referencing ClassificationData to a project",
-		    "kind":"STRING",
-		    "unit":"UUID"
+		"name":"model_id",
+		"description": "UUID referencing ClassificationData to a project",
+		"kind":"STRING",
+	        "unit":"UUID"
 	    },
             {
                 "name":"classification_data",
@@ -32,63 +32,11 @@
 		"optional":true,
                 "unit":"n/a",
                 "typedefinition": "ClassificationData"
-            },
-            {
-                "name":"classification_data_high_precision",
-                "description":"List of Classification Data (the results, high precision)",
-                "kind":"MULTI_DIM_NVP",
-		"dimensions":1,
-		"optional":true,
-                "unit":"n/a",
-                "typedefinition": "ClassificationDataHighPrecision"
             }
         ]
     },
- {
+    {
         "typedefinition": "ClassificationData",
-        "tags": [
-            {
-                "name":"category_id",
-                "description":"Classification category/class ID",
-                "kind":"INT32",
-                "unit":"n/a"
-            },
-            {
-                "name":"category_label",
-                "description":"Human interpreted category name",
-                "kind":"STRING",
-                "unit":"n/a"
-            },
-            {
-                "name":"super_category_id",
-                "description":"Super Category ID containing the category",
-                "kind":"INT32",
-                "unit":"n/a"
-            },
-            {
-                "name":"super_category_label",
-                "description":"Human interpreted super category name",
-                "kind":"STRING",
-                "unit":"n/a"
-            },
-            {
-                "name":"metadata",
-                "description":"Generic buffer for model-specific metadata",
-                "kind":"STRING",
-                "optional":true,
-                "unit":"n/a"
-            },
-            {
-                "name":"probability",
-                "description":"Network confidence",
-                "kind":"FLOAT32",
-                "unit":"Percentage"
-            }
-
-]
-},
-{
-        "typedefinition": "ClassificationDataHighPrecision",
         "tags": [
             {
                 "name":"category_id",
@@ -127,6 +75,6 @@
                 "kind":"FLOAT64",
                 "unit":"Percentage"
             }
-]
-}
+        ]
+    }
 ]
