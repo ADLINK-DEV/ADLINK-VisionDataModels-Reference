@@ -44,68 +44,11 @@
 		"optional":true,
                 "unit":"n/a",
                 "typedefinition": "SegmentationData"
-            },
-            {
-                "name":"segmentation_data_high_precision",
-                "description":"List of Segmentation Data (the results, high precision)",
-                "kind":"MULTI_DIM_NVP",
-		"dimensions": 1,
-		"optional":true,
-                "unit":"n/a",
-                "typedefinition": "SegmentationDataHighPrecision"
             }
         ]
     },
     {
         "typedefinition": "SegmentationData",
-        "tags": [
-            {
-                "name":"category_id",
-                "description":"Mask cateogry/class identifer",
-                "kind":"INT32",
-                "unit":"n/a"
-            },
-            {
-                "name":"category_label",
-                "description":"Human interpreted category name of the mask",
-                "kind":"STRING",
-                "unit":"n/a"
-            },
-            {
-                "name":"size",
-                "description":"Segmentation mask payload size (bytes)",
-                "kind":"INT32",
-                "unit":"bytes"
-            },
-            {
-                "name":"channel",
-                "description":"Segmentation mask output channel",
-                "kind":"INT32",
-                "unit":"index"
-            },
-            {
-                "name":"color",
-                "description":"Segmentation mask color (#XXXXXX)",
-                "kind":"STRING",
-                "optional":true,
-                "unit":"Color"
-            },
-            {
-                "name":"probability",
-                "description":"Network confidence",
-                "kind":"FLOAT32",
-                "unit":"Percentage"
-            },
-            {
-                "name":"frame_data",
-                "description":"Segmentation mask frame data",
-                "kind":"BYTE_SEQ",
-                "unit":"bytes"
-            }
-        ]
-    },
-    {
-        "typedefinition": "SegmentationDataHighPrecision",
         "tags": [
             {
                 "name":"category_id",
