@@ -32,15 +32,6 @@
 		"optional":true,
                 "unit":"n/a",
                 "typedefinition": "DetectionPointData"
-            },
-            {
-                "name":"detection_point_data_high_precision",
-                "description":"List of Detection Point Data (the results, high precision)",
-                "kind":"MULTI_DIM_NVP",
-		"dimensions":1,
-		"optional":true,
-                "unit":"n/a",
-                "typedefinition": "DetectionPointDataHighPrecision"
             }
         ]
     },
@@ -48,60 +39,11 @@
         "typedefinition": "DetectionPointData",
         "tags": [
             {
-                "name":"category_id",
-                "description":"Detected object point cateogry/class ID",
-                "kind":"INT32",
-                "unit":"n/a"
+                "name":"tracker_obj_id",
+                "description":"Detected object id",
+                "kind":"INT64",
+                "unit":"UUID"
             },
-            {
-                "name":"category_label",
-                "description":"Human interpreted category name of the detected point of interest",
-                "kind":"STRING",
-                "unit":"n/a"
-            },
-            {
-                "name":"x",
-                "description":"Center X Coordinate (% from 0,0)",
-                "kind":"FLOAT32",
-                "unit":"Percentage"
-            },
-            {
-                "name":"y",
-                "description":"Center Y Coordinate (% from 0,0)",
-                "kind":"FLOAT32",
-                "unit":"Percentage"
-            },
-            {
-                "name":"radius",
-                "description":"Size of the point (% of image width)",
-                "kind":"FLOAT32",
-                "unit":"Percentage"
-            },
-            {
-                "name":"probability",
-                "description":"Network confidence",
-                "kind":"FLOAT32",
-                "unit":"Percentage"
-            },
-            {
-                "name":"color",
-                "description":"Detection box color",
-                "kind":"STRING",
-                "optional":true,
-                "unit":"Hex Code #RRGGBB"
-            },
-            {
-                "name":"metadata",
-                "description":"Buffer for extra inference metadata",
-                "kind":"STRING",
-                "optional":true,
-                "unit":"N/A"
-            }
-        ]
-    },
-    {
-        "typedefinition": "DetectionPointDataHighPrecision",
-        "tags": [
             {
                 "name":"category_id",
                 "description":"Detected object point cateogry/class ID",
