@@ -34,60 +34,16 @@
                 "name":"tensor_data",
                 "description":"List of OutputTensor Data (the results)",
                 "kind":"MULTI_DIM_NVP",
-		"dimensions":1,
-		"optional":true,
+                "dimensions":1,
+                "optional":true,
                 "unit":"n/a",
-                "typedefinition": "TensorData"
-            },
-            {
-                "name":"tensor_data_high_precision",
-                "description":"List of OutputTensor Data (the results, high precision)",
-                "kind":"MULTI_DIM_NVP",
-		"dimensions":1,
-		"optional":true,
-                "unit":"n/a",
-                "typedefinition": "TensorDataHighPrecision"
+                "typedefinition":"TensorData"
             }
         ]
     },
     {
-        "typedefinition": "TensorData",
-        "tags": [
-            {
-                "name":"index",
-                "description":"Output tensor index",
-                "kind":"UINT32",
-                "unit":"length"
-            },
-            {
-                "name":"output",
-                "description":"Named output tensor",
-                "kind":"UINT32",
-                "unit":"length"
-            },
-            {
-                "name":"rank",
-                "description":"Size of output tensor dimension data",
-                "kind":"UINT32_SEQ",
-                "unit":"length"
-            },
-            {
-                "name":"dimension_data",
-                "description":"Data for specified dimension",
-                "kind":"FLOAT32_SEQ",
-                "unit":"raw"
-            },
-            {
-                "name":"dimension_data_precision",
-                "description":"Precision of data sequence",
-                "kind":"STRING",
-                "unit":"PrecisionMode"
-            }
-        ]
-    },
-    {
-        "typedefinition": "TensorDataHighPrecision",
-        "tags": [
+        "typedefinition":"TensorData",
+        "tags":[
             {
                 "name":"index",
                 "description":"Output tensor index",
@@ -103,13 +59,13 @@
             {
                 "name":"rank",
                 "description":"Size of output tensor dimension data",
-                "kind":"UINT32_SEQ",
+                "kind":"UINT64",
                 "unit":"length"
             },
             {
                 "name":"dimension_data",
                 "description":"Data for specified dimension",
-                "kind":"FLOAT64_SEQ",
+                "kind":"BYTE_SEQ",
                 "unit":"raw"
             },
             {
