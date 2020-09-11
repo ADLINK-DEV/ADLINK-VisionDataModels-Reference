@@ -26,82 +26,18 @@
 		"optional":true,
                 "unit":"n/a",
                 "typedefinition": "DetectionBoxData"
-            },
-            {
-                "name":"detection_box_data_high_precision",
-                "description":"List of Detection Box Data (the results, high precision)",
-                "kind":"MULTI_DIM_NVP",
-		"dimensions":1,
-		"optional":true,
-                "unit":"n/a",
-                "typedefinition": "DetectionBoxDataHighPrecision"
-	    }
+            }
         ]
     },
     {
         "typedefinition": "DetectionBoxData",
         "tags": [
             {
-                "name":"category_id",
-                "description":"Detected object cateogry/class ID",
-                "kind":"INT32",
-                "unit":"n/a"
-            },
-            {
-                "name":"category_label",
-                "description":"Human interpreted category name of the detected object",
-                "kind":"STRING",
+                "name":"tracker_obj_id",
+                "description":"Detected object id",
+                "kind":"INT64",
                 "unit":"UUID"
             },
-            {
-                "name":"x1",
-                "description":"Top Left X Coordinate (% from 0,0)",
-                "kind":"FLOAT32",
-                "unit":"Percentage"
-            },
-            {
-                "name":"y1",
-                "description":"Top Left Y Coordinate (% from 0,0)",
-                "kind":"FLOAT32",
-                "unit":"Percentage"
-            },
-            {
-                "name":"x2",
-                "description":"Bottom Right X Coordinate (% from 0,0)",
-                "kind":"FLOAT32",
-                "unit":"Percentage"
-            },
-            {
-                "name":"y2",
-                "description":"Bottom Right Y Coordinate (% from 0,0)",
-                "kind":"FLOAT32",
-                "unit":"Percentage"
-            },
-            {
-                "name":"probability",
-                "description":"Network confidence",
-                "kind":"FLOAT32",
-                "unit":"Percentage"
-            },
-            {
-                "name":"color",
-                "description":"Detection box color",
-                "kind":"STRING",
-		"optional":true,
-                "unit":"N/A"
-            },
-            {
-                "name":"metadata",
-                "description":"Buffer for extra inference metadata",
-                "optional":true,
-                "kind":"STRING",
-                "unit":"N/A"
-            }
-        ]
-    },
-    {
-        "typedefinition": "DetectionBoxDataHighPrecision",
-        "tags": [
             {
                 "name":"category_id",
                 "description":"Detected object cateogry/class ID",
