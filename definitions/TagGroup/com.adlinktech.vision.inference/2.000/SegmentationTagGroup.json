@@ -27,13 +27,13 @@
             {
                 "name":"width",
                 "description":"Segmentation mask width",
-                "kind":"INT32",
+                "kind":"INT64",
                 "unit":"pixels"
             },
             {
                 "name":"height",
                 "description":"Segmentation mask height",
-                "kind":"INT32",
+                "kind":"INT64",
                 "unit":"pixels"
             },
             {
