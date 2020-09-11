@@ -1,6 +1,6 @@
 [
     {
-        "name":"RawOutput",
+        "name":"RawInferenceResult",
         "context":"com.adlinktech.vision.inference",
         "qosProfile":"telemetry",
         "version":"2.000",
