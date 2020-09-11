@@ -1,6 +1,6 @@
 [
     {
-        "name":"OutputTensor",
+        "name":"RawOutput",
         "context":"com.adlinktech.vision.inference",
         "qosProfile":"telemetry",
         "version":"2.000",
@@ -13,29 +13,43 @@
                 "unit":"UUID"
             },
             {
-                "name":"engine_id",
-                "description":"Inference engine identifier",
-                "kind":"STRING",
-                "unit":"UUID"
-            },
-            {
                 "name":"frame_id",
                 "description":"ID of the input video frame fed to the inference engine",
                 "kind":"UINT32",
                 "unit":"NUM"
             },
             {
-                "name":"dimensions",
-                "description":"Total number of dimensions in output tensor",
-                "kind":"UINT32_SEQ",
-                "unit":"index"
+                "name":"output_tensors",
+                "description":"List of OutputTensor results for each graph output layer",
+                "kind":"MULTI_DIM_NVP",
+                "dimensions":1,
+                "unit":"n/a",
+                "typedefinition":"OutputTensor"
+            }
+        ]
+    },
+    {
+        "typedefinition":"OutputTensor",
+        "tags":[
+            {
+                "name":"output_index",
+                "description":"Graph output layer index",
+                "kind":"UINT64",
+                "unit":"length"
+            },
+            {
+                "name":"output_name",
+                "description":"Proper human name of the graph output layer",
+                "kind":"STRING",
+                "optional":true,
+                "unit":"n/a"
             },
             {
                 "name":"tensor_data",
                 "description":"List of OutputTensor Data (the results)",
                 "kind":"MULTI_DIM_NVP",
                 "dimensions":1,
-                "optional":true,
+                "optional":false,
                 "unit":"n/a",
                 "typedefinition":"TensorData"
             }
@@ -48,17 +62,19 @@
                 "name":"index",
                 "description":"Output tensor index",
                 "kind":"UINT64",
+                "optional":true,
                 "unit":"length"
             },
             {
                 "name":"output_tensor",
-                "description":"Named output tensor",
-                "kind":"UINT64",
-                "unit":"length"
+                "description":"Named output tensor index",
+                "kind":"STRING",
+                "optional":true,
+                "unit":"n/a"
             },
             {
                 "name":"rank",
-                "description":"Size of output tensor dimension data",
+                "description":"Size of output tensor dimension",
                 "kind":"UINT64",
                 "unit":"length"
             },
