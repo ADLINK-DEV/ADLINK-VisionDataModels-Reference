@@ -45,6 +45,13 @@
                 "unit":"n/a"
             },
             {
+                "name":"dimension_ranks",
+                "description":"Size of each dimension of the tensor. This metadata provides necessary hints for reshaping flattened tensors.",
+                "kind":"UINT64_SEQ",
+                "optional":true,
+                "unit":"n/a"
+            },
+            {
                 "name":"tensor_data",
                 "description":"List of OutputTensor Data (the results)",
                 "kind":"MULTI_DIM_NVP",
