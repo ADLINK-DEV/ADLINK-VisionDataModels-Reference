@@ -4,7 +4,7 @@
         "context":"com.adlinktech.vision.inference",
         "qosProfile":"telemetry",
         "version":"2.000",
-        "description":"Inference engine results for object detection model outputing bounding boxes. The stream_id is not part of this TagGroup and assumed to be part of the run-time flowId",
+        "description":"Inference engine results for object detection model outputting bounding boxes. The stream_id is not part of this TagGroup and assumed to be part of the run-time flowId",
         "tags":[
             {
                 "name":"engine_id",
