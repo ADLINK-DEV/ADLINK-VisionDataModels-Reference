@@ -45,6 +45,12 @@
                 "unit":"n/a"
             },
             {
+                "name":"output_format",
+                "description":"Describes the format of the binary representation of the output tensor",
+                "kind":"STRING",
+                "unit":"format identifier"
+            },
+            {
                 "name":"dimension_ranks",
                 "description":"Size of each dimension of the tensor. This metadata provides necessary hints for reshaping flattened tensors.",
                 "kind":"UINT64_SEQ",
@@ -58,12 +64,12 @@
                 "dimensions":1,
                 "optional":false,
                 "unit":"n/a",
-                "typedefinition":"TensorData"
+                "typedefinition":"OutputTensorData"
             }
         ]
     },
     {
-        "typedefinition":"TensorData",
+        "typedefinition":"OutputTensorData",
         "tags":[
             {
                 "name":"index",
