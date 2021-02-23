@@ -1,10 +1,10 @@
 [
     {
         "name":"DetectionPoint",
-        "context":"com.adlinktech.vision.inference",
+        "context":"com.adlinktech.vision",
         "qosProfile":"telemetry",
-        "version":"2.000",
-        "description":"Inference engine results for object detection model outputing points. The stream_id is supposed to be embedded in the flowId.",
+        "version":"2.1.0",
+        "description":"Inference engine results for object detection model outputing points",
         "tags":[
             {
                 "name":"engine_id",
@@ -13,23 +13,27 @@
                 "unit":"UUID"
             },
             {
-                "name":"frame_id",
-                "description":"ID of the input video frame fed to the inference engine",
-                "kind":"UINT32",
-                "unit":"NUM"
-            },
-            {
-                "name":"model_id",
-                "description":" uuid referencing DetectionPointData to a project",
+                "name":"stream_id",
+                "description":"ID of the stream fed into the inference engine",
                 "kind":"STRING",
                 "unit":"UUID"
             },
             {
-                "name":"detection_point_data",
+                "name":"frame_id",
+                "description":"ID of the input video frame fed to the inference engine",
+                "kind":"INT64",
+                "unit":"NUM"
+            },
+            {
+                "name":"model_id",
+                "description":"Unique AI model identifier",
+                "kind":"STRING",
+                "unit":"n/a"
+            },
+            {
+                "name":"data",
                 "description":"List of Detection Point Data (the results)",
-                "kind":"MULTI_DIM_NVP",
-		"dimensions":1,
-		"optional":true,
+                "kind":"NVP_SEQ",
                 "unit":"n/a",
                 "typedefinition": "DetectionPointData"
             }
@@ -45,14 +49,26 @@
                 "unit":"UUID"
             },
             {
+                "name":"super_category_id",
+                "description":"Super Category ID containing the category",
+                "kind":"INT64",
+                "unit":"n/a"
+            },
+            {
+                "name":"super_category_label",
+                "description":"Human interpreted super category name",
+                "kind":"STRING",
+                "unit":"n/a"
+            },
+            {
                 "name":"category_id",
-                "description":"Detected object point cateogry/class ID",
+                "description":"Classification category/class ID",
                 "kind":"INT64",
                 "unit":"n/a"
             },
             {
                 "name":"category_label",
-                "description":"Human interpreted category name of the detected point of interest",
+                "description":"Human interpreted category name",
                 "kind":"STRING",
                 "unit":"n/a"
             },
@@ -85,14 +101,28 @@
                 "description":"Detection box color",
                 "kind":"STRING",
                 "optional":true,
-                "unit":"Hex Code #RRGGBB"
+                "unit":"N/A"
             },
             {
                 "name":"metadata",
                 "description":"Buffer for extra inference metadata",
+                "optional":true,
+                "kind":"STRING",
+                "unit":"N/A"
+            },
+            {
+                "name":"uuid",
+                "description":"Unique inference identifier",
                 "kind":"STRING",
                 "optional":true,
-                "unit":"N/A"
+                "unit":"UUID"
+            },
+            {
+                "name":"parent_id",
+                "description":"Identifier referencing a parent inference node or result",
+                "kind":"STRING",
+                "optional":true,
+                "unit":"n/a"
             }
         ]
     }

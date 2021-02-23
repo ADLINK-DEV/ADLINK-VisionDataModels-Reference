@@ -1,9 +1,9 @@
 [
     {
         "name":"Classification",
-        "context":"com.adlinktech.vision.inference",
+        "context":"com.adlinktech.vision",
         "qosProfile":"telemetry",
-        "version":"2.000",
+        "version":"2.1.0",
         "description":"Inference engine results for classification model",
         "tags":[
             {
@@ -13,23 +13,27 @@
                 "unit":"UUID"
             },
             {
+                "name":"stream_id",
+                "description":"ID of the stream fed into the inference engine",
+                "kind":"STRING",
+                "unit":"UUID"
+            },
+            {
                 "name":"frame_id",
                 "description":"ID of the input video frame fed to the inference engine",
-                "kind":"UINT32",
+                "kind":"INT64",
                 "unit":"NUM"
             },
-	    {
-		"name":"model_id",
-		"description": "UUID referencing ClassificationData to a project",
-		"kind":"STRING",
-	        "unit":"UUID"
-	    },
             {
-                "name":"classification_data",
+                "name":"model_id",
+                "description":"Unique AI model identifier",
+                "kind":"STRING",
+                "unit":"n/a"
+            },
+            {
+                "name":"data",
                 "description":"List of Classification Data (the results)",
-                "kind":"MULTI_DIM_NVP",
-		"dimensions":1,
-		"optional":true,
+                "kind":"NVP_SEQ",
                 "unit":"n/a",
                 "typedefinition": "ClassificationData"
             }
@@ -74,6 +78,27 @@
                 "description":"Network confidence",
                 "kind":"FLOAT64",
                 "unit":"Percentage"
+            },
+            {
+                "name":"color",
+                "description":"Detection box color",
+                "kind":"STRING",
+                "optional":true,
+                "unit":"N/A"
+            },
+            {
+                "name":"uuid",
+                "description":"Unique inference identifier",
+                "kind":"STRING",
+                "optional":true,
+                "unit":"UUID"
+            },
+            {
+                "name":"parent_id",
+                "description":"Identifier referencing a parent inference node or result",
+                "kind":"STRING",
+                "optional":true,
+                "unit":"n/a"
             }
         ]
     }

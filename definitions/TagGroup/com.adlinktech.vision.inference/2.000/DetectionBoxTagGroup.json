@@ -1,10 +1,10 @@
 [
     {
         "name":"DetectionBox",
-        "context":"com.adlinktech.vision.inference",
+        "context":"com.adlinktech.vision",
         "qosProfile":"telemetry",
-        "version":"2.000",
-        "description":"Inference engine results for object detection model outputting bounding boxes. The stream_id is not part of this TagGroup and assumed to be part of the run-time flowId",
+        "version":"2.1.0",
+        "description":"Inference engine results for object detection model outputing bounding boxes",
         "tags":[
             {
                 "name":"engine_id",
@@ -13,17 +13,27 @@
                 "unit":"UUID"
             },
             {
+                "name":"stream_id",
+                "description":"ID of the stream fed into the inference engine",
+                "kind":"STRING",
+                "unit":"UUID"
+            },
+            {
                 "name":"frame_id",
                 "description":"ID of the input video frame fed to the inference engine",
-                "kind":"UINT32",
+                "kind":"INT64",
                 "unit":"NUM"
             },
             {
-                "name":"detection_box_data",
+                "name":"model_id",
+                "description":"Unique AI model identifier",
+                "kind":"STRING",
+                "unit":"n/a"
+            },
+            {
+                "name":"data",
                 "description":"List of Detection Box Data (the results)",
-                "kind":"MULTI_DIM_NVP",
-		"dimensions":1,
-		"optional":true,
+                "kind":"NVP_SEQ",
                 "unit":"n/a",
                 "typedefinition": "DetectionBoxData"
             }
@@ -36,20 +46,32 @@
                 "name":"tracker_obj_id",
                 "description":"Detected object id",
                 "kind":"INT64",
-		"optional":true,
+                "optional":true,
                 "unit":"UUID"
             },
             {
+                "name":"super_category_id",
+                "description":"Super Category ID containing the category",
+                "kind":"INT64",
+                "unit":"n/a"
+            },
+            {
+                "name":"super_category_label",
+                "description":"Human interpreted super category name",
+                "kind":"STRING",
+                "unit":"n/a"
+            },
+            {
                 "name":"category_id",
-                "description":"Detected object cateogry/class ID",
+                "description":"Classification category/class ID",
                 "kind":"INT64",
                 "unit":"n/a"
             },
             {
                 "name":"category_label",
-                "description":"Human interpreted category name of the detected object",
+                "description":"Human interpreted category name",
                 "kind":"STRING",
-                "unit":"UUID"
+                "unit":"n/a"
             },
             {
                 "name":"x1",
@@ -85,7 +107,7 @@
                 "name":"color",
                 "description":"Detection box color",
                 "kind":"STRING",
-		"optional":true,
+                "optional":true,
                 "unit":"N/A"
             },
             {
@@ -94,6 +116,62 @@
                 "optional":true,
                 "kind":"STRING",
                 "unit":"N/A"
+            },
+            {
+                "name":"uuid",
+                "description":"Unique inference identifier",
+                "kind":"STRING",
+                "optional":true,
+                "unit":"UUID"
+            },
+            {
+                "name":"parent_id",
+                "description":"Identifier referencing a parent inference node or result",
+                "kind":"STRING",
+                "optional":true,
+                "unit":"n/a"
+            },
+            {
+                "name":"physical_coords",
+                "description":"Real world location of the bounding box",
+                "kind":"NVP_SEQ",
+                "unit":"n/a",
+                "typedefinition": "PhysicalCoords"
+            }
+        ]
+    },
+    {
+        "typedefinition": "PhysicalCoords",
+        "tags": [
+            {
+                "name":"x",
+                "description":"X coordinate distance from the center of the image",
+                "kind":"FLOAT64",
+                "unit":"meters"
+            },
+            {
+                "name":"y",
+                "description":"Y coordinate distance from the center of the image",
+                "kind":"FLOAT64",
+                "unit":"meters"
+            },
+            {
+                "name":"z",
+                "description":"Z coordinate distance from the configured floor",
+                "kind":"FLOAT64",
+                "unit":"meters"
+            },
+            {
+                "name":"width",
+                "description":"Physical size of the detection box width edge",
+                "kind":"FLOAT64",
+                "unit":"meters"
+            },
+            {
+                "name":"length",
+                "description":"Physical size of the detection box length edge",
+                "kind":"FLOAT64",
+                "unit":"meters"
             }
         ]
     }

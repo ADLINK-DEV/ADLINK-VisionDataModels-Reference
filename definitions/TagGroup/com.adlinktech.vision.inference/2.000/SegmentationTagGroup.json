@@ -1,9 +1,9 @@
 [
     {
         "name":"Segmentation",
-        "context":"com.adlinktech.vision.inference",
+        "context":"com.adlinktech.vision",
         "qosProfile":"telemetry",
-        "version":"2.000",
+        "version":"2.1.0",
         "description":"Inference engine results for classification model. The stream_id is supposed to be encapsulated in the flow_id",
         "tags":[
             {
@@ -13,35 +13,39 @@
                 "unit":"UUID"
             },
             {
+                "name":"stream_id",
+                "description":"ID of the stream fed into the inference engine",
+                "kind":"STRING",
+                "unit":"UUID"
+            },
+            {
                 "name":"frame_id",
                 "description":"ID of the input video frame fed to the inference engine",
-                "kind":"UINT32",
+                "kind":"INT64",
                 "unit":"NUM"
             },
             {
                 "name":"model_id",
-                "description":"Segmentation mask instance in the result array",
-                "kind":"UINT32",
-                "unit":"NUM"
+                "description":"Unique AI model identifier",
+                "kind":"STRING",
+                "unit":"n/a"
             },
             {
                 "name":"width",
-                "description":"Segmentation mask width",
+                "description":"Segmentation mask frame width",
                 "kind":"INT64",
                 "unit":"pixels"
             },
             {
                 "name":"height",
-                "description":"Segmentation mask height",
+                "description":"Segmentation mask frame height",
                 "kind":"INT64",
                 "unit":"pixels"
             },
             {
-                "name":"segmentation_data",
+                "name":"data",
                 "description":"List of Segmentation Data (the results)",
-                "kind":"MULTI_DIM_NVP",
-		"dimensions": 1,
-		"optional":true,
+                "kind":"NVP_SEQ",
                 "unit":"n/a",
                 "typedefinition": "SegmentationData"
             }
@@ -50,6 +54,13 @@
     {
         "typedefinition": "SegmentationData",
         "tags": [
+            {
+                "name":"tracker_obj_id",
+                "description":"Detected object id",
+                "kind":"INT64",
+                "optional":true,
+                "unit":"UUID"
+            },
             {
                 "name":"category_id",
                 "description":"Mask cateogry/class identifer",
@@ -92,6 +103,20 @@
                 "description":"Segmentation mask frame data",
                 "kind":"BYTE_SEQ",
                 "unit":"bytes"
+            },
+            {
+                "name":"uuid",
+                "description":"Unique inference identifier",
+                "kind":"STRING",
+                "optional":true,
+                "unit":"UUID"
+            },
+            {
+                "name":"parent_id",
+                "description":"Identifier referencing a parent inference node or result",
+                "kind":"STRING",
+                "optional":true,
+                "unit":"n/a"
             }
         ]
     }
