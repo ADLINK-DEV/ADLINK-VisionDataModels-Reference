@@ -1,0 +1,9 @@
+To build this succesfully, you will need the following supporting libraries and tools:
+- CMake
+- nlohmann's JSon parsing library
+- spdlog library
+- Boost system and filesystem libraries
+
+You can get these by issuing on Debian/Ubuntu based systems:
+sudo apt install build-essential
+sudo apt install cmake libspdlog-dev nlohman-json3-dev libboost-filesystem-dev libboost-system-dev
