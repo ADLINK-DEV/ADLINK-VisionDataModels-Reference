@@ -1,0 +1,170 @@
+[
+    {
+        "name": "InstanceSegmentation",
+        "context": "com.adlinktech.vision.inference",
+        "qosProfile": "telemetry",
+        "version": "2.2.0",
+        "description": "Inference engine results for instance segmentation model. The flowId is expected to be in the form of <stream id>.<engine id>.",
+        "tags": [
+            {
+                "name": "frame_id",
+                "description": "ID of the input video frame fed to the inference engine",
+                "kind": "INT64",
+                "unit": "NUM"
+            },
+            {
+                "name": "model_id",
+                "description": "AI model identifier associated with the result",
+                "kind": "STRING",
+                "optional": true,
+                "unit": "n/a"
+            },
+            {
+                "name": "segmentation_masks",
+                "description": "List of segmentation masks (the results)",
+                "kind": "MULTI_DIM_NVP",
+                "dimensions": 1,
+                "optional": true,
+                "unit": "n/a",
+                "typedefinition": "InstanceSegmentationMask"
+            }
+        ]
+    },
+    {
+        "typedefinition": "InstanceSegmentationMask",
+        "tags": [
+            {
+                "name": "width",
+                "description": "Segmentation mask width",
+                "kind": "INT64",
+                "unit": "pixels"
+            },
+            {
+                "name": "height",
+                "description": "Segmentation mask height",
+                "kind": "INT64",
+                "unit": "pixels"
+            },
+            {
+                "name": "encoding",
+                "description": "Encoding scheme used for segmentation mask",
+                "kind": "STRING",
+                "unit": "EncodingKind"
+            },
+            {
+                "name": "size",
+                "description": "Segmentation mask payload size (bytes)",
+                "kind": "INT64",
+                "unit": "bytes"
+            },
+            {
+                "name": "offset_x",
+                "description": "X axis offset of mask within frame (pixels from 0,0)",
+                "kind": "INT64",
+                "unit": "pixels"
+            },
+            {
+                "name": "offset_y",
+                "description": "Y axis offset of mask within frame (pixels from 0,0)",
+                "kind": "INT64",
+                "unit": "pixels"
+            },
+            {
+                "name": "frame_data",
+                "description": "Segmentation mask frame data",
+                "kind": "BYTE_SEQ",
+                "unit": "bytes"
+            },
+            {
+                "name": "instances",
+                "description": "List of instances associated with this segmentation mask",
+                "kind": "NVP_SEQ",
+                "optional": true,
+                "unit": "n/a",
+                "typedefinition": "SegmentationInstance"
+            },
+            {
+                "name": "inference_id",
+                "description": "Unique inference identifier",
+                "kind": "STRING",
+                "optional": true,
+                "unit": "uuidv4"
+            },
+            {
+                "name": "parent_inference_id",
+                "description": "Identifier referencing a parent inference node or result",
+                "kind": "STRING",
+                "optional": true,
+                "unit": "uuidv4"
+            }
+        ]
+    },
+    {
+        "typedefinition": "SegmentationInstance",
+        "tags": [
+            {
+                "name": "super_category_id",
+                "description": "Super category/class ID",
+                "kind": "STRING",
+                "optional": true,
+                "unit": "n/a"
+            },
+            {
+                "name": "super_category_label",
+                "description": "Human interpreted super category name",
+                "kind": "STRING",
+                "optional": true,
+                "unit": "n/a"
+            },
+            {
+                "name": "category_id",
+                "description": "Classification category/class ID",
+                "kind": "STRING",
+                "optional": true,
+                "unit": "n/a"
+            },
+            {
+                "name": "category_label",
+                "description": "Human interpreted category name",
+                "kind": "STRING",
+                "optional": true,
+                "unit": "n/a"
+            },
+            {
+                "name": "x1",
+                "description": "Top left X coordinate of bounding box within mask (% from 0,0)",
+                "kind": "FLOAT64",
+                "optional": true,
+                "unit": "Percentage"
+            },
+            {
+                "name": "y1",
+                "description": "Top left Y coordinate of bounding box within mask (% from 0,0)",
+                "kind": "FLOAT64",
+                "optional": true,
+                "unit": "Percentage"
+            },
+            {
+                "name": "x2",
+                "description": "Bottom right X coordinate of bounding box within mask (% from 0,0)",
+                "kind": "FLOAT64",
+                "optional": true,
+                "unit": "Percentage"
+            },
+            {
+                "name": "y2",
+                "description": "Bottom right Y coordinate of bounding box within mask (% from 0,0)",
+                "kind": "FLOAT64",
+                "optional": true,
+                "unit": "Percentage"
+            },
+            {
+                "name": "color",
+                "description": "Color associated with this category",
+                "kind": "STRING",
+                "optional": true,
+                "unit": "Hex Code #RRGGBB"
+            }
+        ]
+    }
+]
