@@ -78,7 +78,7 @@
             {
                 "name": "categories",
                 "description": "List of categories associated with this segmentation mask",
-                "kind": "NVP_SEQ",
+                "kind": "MULTI_DIM_NVP",
                 "optional": true,
                 "unit": "n/a",
                 "typedefinition": "SegmentationCategory"
