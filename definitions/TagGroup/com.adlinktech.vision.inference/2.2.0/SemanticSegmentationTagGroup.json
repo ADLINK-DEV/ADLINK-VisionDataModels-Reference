@@ -79,6 +79,7 @@
                 "name": "categories",
                 "description": "List of categories associated with this segmentation mask",
                 "kind": "MULTI_DIM_NVP",
+                "dimensions": 1,
                 "optional": true,
                 "unit": "n/a",
                 "typedefinition": "SegmentationCategory"
