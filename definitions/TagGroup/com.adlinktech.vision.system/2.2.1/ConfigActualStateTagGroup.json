@@ -1,0 +1,36 @@
+[
+    {
+        "name":"ConfigurationActualState",
+        "context":"com.adlinktech.vision.system",
+        "qosProfile":"state",
+        "version":"2.2.1",
+        "description":"Current Configuration of a Device",
+        "tags":[
+            {
+                "name":"configuration_data",
+                "description":"Configuration data",
+                "kind":"MULTI_DIM_NVP",
+                "dimensions":1,
+                "unit":"n/a",
+                "typedefinition": "ConfigData"
+            }
+        ]
+    },
+    {
+        "typedefinition": "ConfigData",
+        "tags": [
+            {
+                "name":"type",
+                "description":"Config Request Type",
+                "kind":"STRING",
+                "unit":"n/a"
+            },
+            {
+                "name":"payload",
+                "description":"Current config values",
+                "kind":"STRING",
+                "unit":"n/a"
+            }
+        ]
+    }
+]

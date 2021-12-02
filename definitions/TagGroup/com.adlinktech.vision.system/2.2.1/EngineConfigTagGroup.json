@@ -1,0 +1,141 @@
+[
+    {
+        "name":"EngineConfig",
+        "context":"com.adlinktech.vision.system",
+        "qosProfile":"state",
+        "version":"2.2.1",
+        "description":"Inference Engine Publishes its current & desired configuration",
+        "tags":[
+            {
+                "name":"engine_id",
+                "description":"Publishing inference engine identifer",
+                "kind":"STRING",
+                "unit":"UUID"
+            },
+            {
+                "name":"name",
+                "description":"Proper name of the inference engine",
+                "kind":"STRING",
+                "unit":"n/a"
+            },
+            {
+                "name":"source",
+                "description":"Producer of the inference engine",
+                "kind":"STRING",
+                "unit":"n/a"
+            },
+            {
+                "name":"version",
+                "description":"Inference engine revision",
+                "kind":"STRING",
+                "unit":"n/a"
+            },
+            {
+                "name":"streams",
+                "description":"Streams used by the inference engine",
+                "kind":"MULTI_DIM_NVP",
+                "unit":"n/a",
+                "typedefinition":"EngineStreamConfig",
+                "dimensions": 1
+            },
+            {
+                "name":"kind",
+                "description":"Inference engine kind",
+                "kind":"STRING",
+                "unit":"EngineKind"
+            },
+            {
+                "name":"image",
+                "description":"Configured input image expectations",
+                "kind":"NVP_SEQ",
+                "unit":"n/a",
+                "typedefinition":"ImageConfig"
+            }
+        ]
+    },
+    {
+        "typedefinition": "EngineStreamConfig",
+        "tags":[
+            {
+                "name":"source_id",
+                "description":"The source-stream of the video frames",
+                "kind":"STRING",
+                "unit":"n/a"
+            },
+            {
+                "name":"output_id",
+                "description":"The Inference Data Output StreamId. Defaults to source_id.",
+                "kind":"STRING",
+                "unit":"n/a"
+            }
+        ]
+    },
+    {
+        "typedefinition": "ImageConfig",
+        "tags":[
+            {
+                "name":"width",
+                "description":"Expected input image width",
+                "kind":"UINT32",
+                "unit":"pixels",
+                "optional": true
+            },
+            {
+                "name":"height",
+                "description":"Expected input image height",
+                "kind":"UINT32",
+                "unit":"pixels",
+                "optional": true
+            },
+            {
+                "name":"channels",
+                "description":"Expected input image channel count",
+                "kind":"UINT32",
+                "unit":"NUM",
+                "optional": true
+            },
+            {
+                "name":"format",
+                "description":"Expected input image pixel format.",
+                "kind":"STRING",
+                "unit":"com.vision.models.PixelFormat",
+                "optional": true
+            },
+            {
+                "name":"crop",
+                "description":"Declares whether the input image should be cropped to width & height",
+                "kind":"BOOLEAN",
+                "unit":"n/a",
+                "optional": true
+            },
+            {
+                "name":"resize",
+                "description":"Declares whether the input image should be resized to width & height",
+                "kind":"BOOLEAN",
+                "unit":"n/a",
+                "optional": true
+            },
+            {
+                "name":"roi_x1",
+                "description":"Declares Top-Left X position of Region of Interest if image should be croppped",
+                "kind":"UINT32",
+                "unit":"Percentage",
+                "optional": true
+            },
+            {
+                "name":"roi_y1",
+                "description":"Declares Top-Left Y position of Region of Interest if image should be croppped",
+                "kind":"UINT32",
+                "unit":"Percentage",
+                "optional": true
+            },
+            {
+                "name":"framerate",
+                "description":"Specifies the configured/expected framerate for input images streams",
+                "kind":"FLOAT32",
+                "unit":"fps",
+                "optional": true
+            }
+        ]
+    }
+]

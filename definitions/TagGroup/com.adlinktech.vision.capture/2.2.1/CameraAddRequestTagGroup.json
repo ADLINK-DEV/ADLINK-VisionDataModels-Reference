@@ -1,0 +1,60 @@
+[
+    {
+        "name":"CameraAddRequest",
+        "context":"com.adlinktech.vision.capture",
+        "qosProfile":"event",
+        "version":"2.2.1",
+        "description":"Camera Add Request: sent when a camera should be added to the Date River",
+        "tags":[
+            {
+                "name":"reason",
+                "description":"optional description of the request",
+                "kind":"STRING",
+                "unit":"n/a",
+                "optional": true
+            },
+            {
+                "name":"camera_info",
+                "description":"the description of the camera",
+                "kind":"NVP_SEQ",
+                "unit":"n/a",
+                "typedefinition":"CameraInfo"
+            }
+        ]
+    },
+    {
+        "typedefinition": "CameraInfo",
+        "tags":[
+            {
+                "name":"camera_id",
+                "description":"Unique camera id",
+                "kind":"STRING",
+                "unit":"n/a"
+            },
+            {
+                "name":"uri",
+                "description":"Camera network URI",
+                "kind":"STRING",
+                "unit":"n/a"
+            },
+            {
+                "name":"name",
+                "description":"Name of the Camera",
+                "kind":"STRING",
+                "unit":"n/a"
+            },
+            {
+                "name":"encoding",
+                "description":"Requested Encoding to be used by the Camera",
+                "kind":"STRING",
+                "unit":"CompressionKind"
+            },
+            {
+                "name":"port",
+                "description":"Port number",
+                "kind":"UINT32",
+                "unit":"Value"
+            }
+        ]
+    }
+]

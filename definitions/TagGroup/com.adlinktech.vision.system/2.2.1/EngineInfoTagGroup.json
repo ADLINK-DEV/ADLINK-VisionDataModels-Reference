@@ -1,0 +1,21 @@
+{
+    "name":"EngineInfo",
+    "context":"com.adlinktech.vision.system",
+    "qosProfile":"state",
+    "version":"2.2.1",
+    "description":"Inference Engine State & Info",
+    "tags":[        
+        {
+            "name":"engine_id",
+            "description":"Inference engine identifier",
+            "kind":"STRING",
+            "unit":"UUID"
+        },
+        {
+            "name":"state",
+            "description":"Inference engine status - see com.ai.engine.EngineState",
+            "kind":"STRING",
+            "unit":"EngineState"
+        }
+    ]
+}

@@ -1,0 +1,40 @@
+{
+    "name":"Alarm",
+    "context":"com.adlinktech.vision.system",
+    "qosProfile":"event",
+    "version":"2.2.1",
+    "description":"Alarms & alert data stream. Stream_id is encapsulated in the flowId",
+    "tags":[
+        {
+            "name":"alarm_id",
+            "description":"Alarm ID",
+            "kind":"STRING",
+            "unit":"uuidv4"
+        },
+        {
+            "name":"level",
+            "description":"Alarm Level enum",
+            "kind":"STRING",
+            "unit":"AlarmLevel"
+        },
+        {
+            "name":"timestamp",
+            "description":"Alarm Event Timestamp",
+            "kind":"INT64",
+            "unit":"timestamp"
+        },
+        {
+            "name":"message",
+            "description":"Alarm information text",
+            "kind":"STRING",
+            "unit":"n/a"
+        },
+        {
+            "name":"meta",
+            "description":"Additional metadata",
+            "kind":"STRING",
+            "unit":"n/a",
+            "optional": true
+        }
+    ]
+}

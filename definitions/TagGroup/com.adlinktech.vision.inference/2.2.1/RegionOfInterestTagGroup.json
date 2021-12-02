@@ -1,0 +1,89 @@
+[
+    {
+       "name":"RegionOfInterest",
+       "context":"com.adlinktech.vision.inference",
+       "qosProfile":"state",
+       "version":"2.2.1",
+       "description":"Current state of a Region of Interest (ROI). The flowId is expected to be in the form of <stream id>.<engine id>.<region name>",
+       "tags":[
+          {
+             "name":"x1",
+             "description":"Top Left X Coordinate (% from 0,0)",
+             "kind":"FLOAT64",
+             "unit":"Percentage"
+          },
+          {
+             "name":"y1",
+             "description":"Top Left Y Coordinate (% from 0,0)",
+             "kind":"FLOAT64",
+             "unit":"Percentage"
+          },
+          {
+             "name":"x2",
+             "description":"Bottom Right X Coordinate (% from 0,0)",
+             "kind":"FLOAT64",
+             "unit":"Percentage"
+          },
+          {
+             "name":"y2",
+             "description":"Bottom Right Y Coordinate (% from 0,0)",
+             "kind":"FLOAT64",
+             "unit":"Percentage"
+          },
+          {
+             "name":"object_count",
+             "description":"Total number of objects currently within this ROI.",
+             "kind":"UINT32",
+             "unit":"Number"
+          },
+          {
+             "name":"category_object_count",
+             "description":"Total number of objects per category currently within this ROI.",
+             "kind":"MULTI_DIM_NVP",
+             "dimensions":1,
+             "optional":true,
+             "unit":"n/a",
+             "typedefinition":"CategoryObjectCount"
+          },
+          {
+             "name":"tracked_objects",
+             "description":"List of tracked objects currently within the ROI.",
+             "kind":"STRING_SEQ",
+             "optional":true,
+             "unit":"Tracked Object Id"
+          },
+          {
+             "name":"is_overcrowded",
+             "description":"Indicates whether an ROI is overcrowded (true) or not (false).",
+             "kind":"BOOLEAN",
+             "optional":true,
+             "unit":"n/a"
+          }
+       ]
+    },
+    {
+       "typedefinition":"CategoryObjectCount",
+       "tags":[
+          {
+             "name":"category_id",
+             "description":"Classification category/class ID",
+             "kind":"STRING",
+             "unit":"n/a"
+          },
+          {
+             "name":"category_label",
+             "description":"Human interpreted categorry name",
+             "kind":"STRING",
+             "optional":true,
+             "unit":"n/a"
+          },
+          {
+             "name":"count",
+             "description":"Number of objects",
+             "kind":"UINT32",
+             "unit":"Number"
+          }
+       ]
+    }
+]
+

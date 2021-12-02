@@ -1,0 +1,21 @@
+{
+    "name":"StreamRequest",
+    "context":"com.adlinktech.vision.capture",
+    "qosProfile":"event",
+    "version":"2.2.1",
+    "description":"Request model for initating device video streams; the stream is encapsulated in the flowId",
+    "tags":[
+        {
+            "name":"request",
+            "description":"What to do with the stream: ENABLE, DISABLE",
+            "kind":"STRING",
+            "unit":"n/a"
+        },
+        {
+            "name":"framerate",
+            "description":"Specify the framerate that should be streamed",
+            "kind":"FLOAT32",
+            "unit":"frames per second"
+        }
+    ]
+}
