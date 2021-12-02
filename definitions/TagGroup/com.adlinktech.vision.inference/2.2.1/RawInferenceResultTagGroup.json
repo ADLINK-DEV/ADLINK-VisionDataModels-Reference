@@ -1,0 +1,110 @@
+[
+    {
+        "name":"RawInferenceResult",
+        "context":"com.adlinktech.vision.inference",
+        "qosProfile":"telemetry",
+        "version":"2.2.1",
+        "description":"Generic inference engine results for any model. The flowId is expected to be in the form of <stream id>.<engine id>.",
+        "tags":[
+            {
+                "name":"frame_id",
+                "description":"ID of the input video frame fed to the inference engine",
+                "kind":"UINT32",
+                "unit":"NUM"
+            },
+            {
+                "name":"model_id",
+                "description": "AI model identifier associated with the result",
+                "kind":"STRING",
+                "optional":true,
+                "unit":"n/a"
+            },
+            {
+                "name":"output_tensors",
+                "description":"List of OutputTensor results for each graph output layer",
+                "kind":"MULTI_DIM_NVP",
+                "dimensions":1,
+                "optional":true,
+                "unit":"n/a",
+                "typedefinition":"OutputTensor"
+            }
+        ]
+    },
+    {
+        "typedefinition":"OutputTensor",
+        "tags":[
+            {
+                "name":"output_index",
+                "description":"Graph output layer index",
+                "kind":"UINT64",
+                "unit":"length"
+            },
+            {
+                "name":"output_name",
+                "description":"Proper human name of the graph output layer",
+                "kind":"STRING",
+                "optional":true,
+                "unit":"n/a"
+            },
+            {
+                "name":"output_format",
+                "description":"Describes the format of the binary representation of the output tensor",
+                "kind":"STRING",
+                "unit":"format identifier"
+            },
+            {
+                "name":"dimension_ranks",
+                "description":"Size of each dimension of the tensor. This metadata provides necessary hints for reshaping flattened tensors.",
+                "kind":"UINT64_SEQ",
+                "optional":true,
+                "unit":"n/a"
+            },
+            {
+                "name":"tensor_data",
+                "description":"List of OutputTensor Data (the results)",
+                "kind":"MULTI_DIM_NVP",
+                "dimensions":1,
+                "optional":false,
+                "unit":"n/a",
+                "typedefinition":"OutputTensorData"
+            }
+        ]
+    },
+    {
+        "typedefinition":"OutputTensorData",
+        "tags":[
+            {
+                "name":"index",
+                "description":"Output tensor index",
+                "kind":"UINT64",
+                "optional":true,
+                "unit":"length"
+            },
+            {
+                "name":"output_tensor",
+                "description":"Named output tensor index",
+                "kind":"STRING",
+                "optional":true,
+                "unit":"n/a"
+            },
+            {
+                "name":"rank",
+                "description":"Size of output tensor dimension",
+                "kind":"UINT64",
+                "unit":"length"
+            },
+            {
+                "name":"dimension_data",
+                "description":"Data for specified dimension",
+                "kind":"BYTE_SEQ",
+                "unit":"raw"
+            },
+            {
+                "name":"dimension_data_precision",
+                "description":"Precision of data sequence",
+                "kind":"STRING",
+                "unit":"PrecisionMode"
+            }
+        ]
+    }
+]

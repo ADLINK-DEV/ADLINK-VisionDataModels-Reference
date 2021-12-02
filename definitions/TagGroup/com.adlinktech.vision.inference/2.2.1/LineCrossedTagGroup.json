@@ -1,0 +1,28 @@
+{
+    "name":"LineCrossed",
+    "context":"com.adlinktech.vision.inference",
+    "qosProfile":"event",
+    "version":"2.2.1",
+    "description":"Represents a line crossed event. The flowId is expected to be in the form of <stream id>.<engine id>.<line name>",
+    "tags":[
+       {
+          "name":"object_id",
+          "description":"Tracked object Id of the object crossing the line.",
+          "kind":"STRING",
+          "unit":"uuidv4"
+       },
+       {
+          "name":"frame_id",
+          "description":"ID of the input video frame fed to the inference engine.",
+          "kind":"INT64",
+          "unit":"NUM"
+       },
+       {
+          "name":"direction",
+          "description":"Direction in which the line was crossed.",
+          "kind":"FLOAT64",
+          "optional":true,
+          "unit":"degrees"
+       }
+    ]
+}

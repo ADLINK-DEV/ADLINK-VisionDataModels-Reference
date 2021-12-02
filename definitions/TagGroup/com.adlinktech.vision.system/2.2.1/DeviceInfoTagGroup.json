@@ -1,0 +1,87 @@
+{
+    "name":"DeviceInfo",
+    "context":"com.adlinktech.vision.system",
+    "qosProfile":"state",
+    "version":"2.2.1",
+    "description":"Vision Device properties",
+    "tags":[
+        {
+            "name":"stream_id",
+            "description":"Stream publisher ID",
+            "kind":"STRING",
+            "unit":"UUID"
+        },
+        {
+            "name":"mac_address",
+            "description":"Host address",
+            "kind":"STRING",
+            "unit":"n/a"
+        },
+        {
+            "name":"ip_address",
+            "description":"Host machine IP Address",
+            "kind":"STRING",
+            "unit":"n/a"
+        },
+        {
+            "name":"port",
+            "description":"Connection port (optional)",
+            "kind":"INT32",
+            "unit":"n/a"
+        },
+        {
+            "name":"uri",
+            "description":"Video Interface URI (rtsp://xx/h264)",
+            "kind":"STRING",
+            "unit":"n/a"
+        },
+        {
+            "name":"manufacturer",
+            "description":"Vision Device manufacturer",
+            "kind":"STRING",
+            "unit":"n/a"
+        },
+        {
+            "name":"model",
+            "description":"Vision Device model",
+            "kind":"STRING",
+            "unit":"n/a"
+        },
+        {
+            "name":"serial",
+            "description":"Vision Device serial identifier",
+            "kind":"STRING",
+            "unit":"n/a"
+        },
+        {
+            "name":"firmware_version",
+            "description":"Vision Device firmware version",
+            "kind":"STRING",
+            "unit":"n/a"
+        },
+        {
+            "name":"system_device_id",
+            "description":"Vision Device host interface (ex. /dev/video0 or /dev/ttyUSB0)",
+            "kind":"STRING",
+            "unit":"n/a"
+        },
+        {
+            "name":"status",
+            "description":"DeviceStatus enum",
+            "kind":"STRING",
+            "unit":"DeviceStatus"
+        },
+        {
+            "name":"kind",
+            "description":"Vision device kind enum",
+            "kind":"STRING",
+            "unit":"DeviceKind"
+        },
+        {
+            "name":"protocol",
+            "description":"ProtocolKind enum describing how the device communicates",
+            "kind":"STRING",
+            "unit":"ProtocolKind"
+        }
+    ]
+}

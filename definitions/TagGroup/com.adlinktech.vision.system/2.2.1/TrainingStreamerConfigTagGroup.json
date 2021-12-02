@@ -1,0 +1,53 @@
+[
+    {
+        "name": "TrainingStreamerConfig",
+        "context": "com.adlinktech.vision.system",
+        "qosProfile": "state",
+        "version": "2.2.1",
+        "description": "Current status of a training streamer.",
+        "tags": [
+            {
+                "name": "FrameStorage",
+                "description": "Save location in local or remote.",
+                "kind": "STRING",
+                "unit": "NA"
+            },
+            {
+                "name": "StreamInformation",
+                "description": "Information about the stream",
+                "kind": "NVP_SEQ",
+                "unit": "NA",
+                "typedefinition": "StreamInfo"
+            }
+        ]
+    },
+    {
+        "typedefinition": "StreamInfo",
+        "tags": [
+            {
+                "name": "StreamId",
+                "description": "Stream id",
+                "kind": "STRING",
+                "unit": "NA"
+            },
+            {
+                "name": "Status",
+                "description": "on (true) or off (false)",
+                "kind": "BOOLEAN",
+                "unit": "NA"
+            },
+            {
+                "name": "NumberOfFrame",
+                "description": "Number of frames per time unit, 0 means no downsampling",
+                "kind": "INT32",
+                "unit": "NA"
+            },
+            {
+                "name": "TimeUnit",
+                "description": "Time unit, could be Second/Minute/Hour",
+                "kind": "STRING",
+                "unit": "NA"
+            }
+        ]
+    }
+]

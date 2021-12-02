@@ -1,0 +1,27 @@
+{
+    "name":"Performance",
+    "context":"com.adlinktech.vision.system",
+    "qosProfile":"bestEffortTelemetry",
+    "version":"2.2.1",
+    "description":"Inference Engine processing performance update The stream_id is encapsulated in the flowId",
+    "tags":[
+        {
+            "name":"engine_id",
+            "description":"Inference engine identifier",
+            "kind":"STRING",
+            "unit":"UUID"
+        },
+        {
+            "name":"frame_id",
+            "description":"Frame sample ID",
+            "kind":"UINT32",
+            "unit":"NUM"
+        },
+        {
+            "name":"delay",
+            "description":"Inference processing time",
+            "kind":"UINT32",
+            "unit":"milliseconds"
+        }
+    ]
+}

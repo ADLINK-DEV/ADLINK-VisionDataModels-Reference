@@ -1,0 +1,75 @@
+
+[
+    {
+       "name":"Line",
+       "context":"com.adlinktech.vision.inference",
+       "qosProfile":"state",
+       "version":"2.2.1",
+       "description":"Current state of a Line. The flowId is expected to be in the form of <stream id>.<engine id>.<line name>",
+       "tags":[
+          {
+             "name":"x1",
+             "description":"Origin X Coordinate (% from 0,0)",
+             "kind":"FLOAT64",
+             "unit":"Percentage"
+          },
+          {
+             "name":"y1",
+             "description":"Origin Y Coordinate (% from 0,0)",
+             "kind":"FLOAT64",
+             "unit":"Percentage"
+          },
+          {
+             "name":"x2",
+             "description":"End X Coordinate (% from 0,0)",
+             "kind":"FLOAT64",
+             "unit":"Percentage"
+          },
+          {
+             "name":"y2",
+             "description":"End Y Coordinate (% from 0,0)",
+             "kind":"FLOAT64",
+             "unit":"Percentage"
+          },
+          {
+             "name":"object_count",
+             "description":"Total number of objects that have crossed the line.",
+             "kind":"UINT32",
+             "unit":"Number"
+          },
+          {
+             "name":"category_object_count",
+             "description":"Total number of objects per category that have crossed the line.",
+             "kind":"MULTI_DIM_NVP",
+             "dimensions":1,
+             "optional":true,
+             "unit":"n/a",
+             "typedefinition":"CategoryObjectCount"
+          }
+       ]
+    },
+    {
+       "typedefinition":"CategoryObjectCount",
+       "tags":[
+          {
+             "name":"category_id",
+             "description":"Classification category/class ID",
+             "kind":"STRING",
+             "unit":"n/a"
+          },
+          {
+             "name":"category_label",
+             "description":"Human interpreted categorry name",
+             "kind":"STRING",
+             "optional":true,
+             "unit":"n/a"
+          },
+          {
+             "name":"count",
+             "description":"Number of objects",
+             "kind":"UINT32",
+             "unit":"Number"
+          }
+       ]
+    }
+]

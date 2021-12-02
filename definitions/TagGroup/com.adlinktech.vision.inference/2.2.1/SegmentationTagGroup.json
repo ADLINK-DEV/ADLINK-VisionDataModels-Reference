@@ -1,0 +1,138 @@
+[
+    {
+        "name":"Segmentation",
+        "context":"com.adlinktech.vision.inference",
+        "qosProfile":"telemetry",
+        "version":"2.2.1",
+        "description":"Inference engine results for classification model. The flowId is expected to be in the form of <stream id>.<engine id>.",
+        "tags":[
+            {
+                "name":"frame_id",
+                "description":"ID of the input video frame fed to the inference engine",
+                "kind":"INT64",
+                "unit":"NUM"
+            },
+            {
+                "name":"model_id",
+                "description":"AI model identifier associated with the result",
+                "kind":"STRING",
+                "unit":"n/a",
+                "optional": true
+            },
+            {
+                "name":"width",
+                "description":"Segmentation mask width",
+                "kind":"INT64",
+                "unit":"pixels"
+            },
+            {
+                "name":"height",
+                "description":"Segmentation mask height",
+                "kind":"INT64",
+                "unit":"pixels"
+            },
+            {
+                "name":"segmentation_data",
+                "description":"List of Segmentation Data (the results)",
+                "kind":"MULTI_DIM_NVP",
+                "unit":"n/a",
+                "typedefinition":"SegmentationData",
+                "dimensions": 1,
+                "optional": true
+            }
+        ]
+    },
+    {
+        "typedefinition": "SegmentationData",
+        "tags":[
+            {
+                "name":"tracker_obj_id",
+                "description":"Detected object id",
+                "kind":"STRING",
+                "unit":"uuidv4",
+                "optional": true
+            },
+            {
+                "name":"super_category_id",
+                "description":"Super category/class ID",
+                "kind":"STRING",
+                "unit":"n/a",
+                "optional": true
+            },
+            {
+                "name":"super_category_label",
+                "description":"Human interpreted super category name",
+                "kind":"STRING",
+                "unit":"n/a",
+                "optional": true
+            },
+            {
+                "name":"category_id",
+                "description":"Classification category/class ID",
+                "kind":"STRING",
+                "unit":"n/a",
+                "optional": true
+            },
+            {
+                "name":"category_label",
+                "description":"Human interpreted category name",
+                "kind":"STRING",
+                "unit":"n/a",
+                "optional": true
+            },
+            {
+                "name":"size",
+                "description":"Segmentation mask payload size (bytes)",
+                "kind":"INT64",
+                "unit":"bytes"
+            },
+            {
+                "name":"channel",
+                "description":"Segmentation mask output channel",
+                "kind":"INT64",
+                "unit":"index"
+            },
+            {
+                "name":"color",
+                "description":"Segmentation mask color",
+                "kind":"STRING",
+                "unit":"Hex Code #RRGGBB",
+                "optional": true
+            },
+            {
+                "name":"probability",
+                "description":"Network confidence",
+                "kind":"FLOAT64",
+                "unit":"Percentage",
+                "optional": true
+            },
+            {
+                "name":"tracker_probability",
+                "description":"Tracker confidence",
+                "kind":"FLOAT64",
+                "unit":"Percentage",
+                "optional": true
+            },
+            {
+                "name":"frame_data",
+                "description":"Segmentation mask frame data",
+                "kind":"BYTE_SEQ",
+                "unit":"bytes"
+            },
+            {
+                "name":"inference_id",
+                "description":"Unique inference identifier",
+                "kind":"STRING",
+                "unit":"uuidv4",
+                "optional": true
+            },
+            {
+                "name":"parent_inference_id",
+                "description":"Identifier referencing a parent inference node or result",
+                "kind":"STRING",
+                "unit":"uuidv4",
+                "optional": true
+            }
+        ]
+    }
+]

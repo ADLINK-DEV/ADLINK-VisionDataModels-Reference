@@ -1,0 +1,69 @@
+{
+    "name":"VideoFrame",
+    "context":"com.adlinktech.vision.capture",
+    "qosProfile":"video",
+    "version":"2.2.1",
+    "description":"Video frame sample. The stream_id should be encapsulated in the flowId",
+    "tags":[
+        {
+            "name":"frame_id",
+            "description":"Frame sample ID",
+            "kind":"INT64",
+            "unit":"NUM"
+        },
+        {
+            "name":"timestamp",
+            "description":"Time of image capture event",
+            "kind":"INT64",
+            "unit":"time"
+        },
+        {
+            "name":"video_data",
+            "description":"Video frame data",
+            "kind":"BYTE_SEQ",
+            "unit":"Frame data"
+        },
+        {
+            "name":"width",
+            "description":"Frame width",
+            "kind":"UINT32",
+            "unit":"Pixels"
+        },
+        {
+            "name":"height",
+            "description":"Frame height",
+            "kind":"UINT32",
+            "unit":"Pixels"
+        },
+        {
+            "name":"channels",
+            "description":"Channels",
+            "kind":"UINT32",
+            "unit":"Number of channels"
+        },
+        {
+            "name":"size",
+            "description":"Data size",
+            "kind":"UINT64",
+            "unit":"Size"
+        },
+        {
+            "name":"format",
+            "description":"Pixel format using OpenCV Definitions",
+            "kind":"STRING",
+            "unit":"PixelFormat"
+        },
+        {
+            "name":"compression",
+            "description":"Compression technology used for video frame",
+            "kind":"STRING",
+            "unit":"CompressionKind"
+        },
+        {
+            "name":"framerate",
+            "description":"Frame transmission frequency",
+            "kind":"FLOAT32",
+            "unit":"fps"
+        }
+    ]
+}

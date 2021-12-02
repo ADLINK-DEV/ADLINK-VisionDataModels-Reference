@@ -1,0 +1,36 @@
+{
+    "name":"DeviceError",
+    "context":"com.adlinktech.vision.system",
+    "qosProfile":"event",
+    "version":"2.2.1",
+    "description":"Vision Device error",
+    "tags":[
+        {
+            "name":"device_id",
+            "description":"Source device ID",
+            "kind":"STRING",
+            "unit":"n/a"
+        },
+        {
+            "name":"message",
+            "description":"Error Message",
+            "kind":"STRING",
+            "unit":"n/a",
+            "optional": true
+        },
+        {
+            "name":"error_id",
+            "description":"Error code",
+            "kind":"INT32",
+            "unit":"n/a",
+            "optional": true
+        },
+        {
+            "name":"description",
+            "description":"Human readable error description",
+            "kind":"STRING",
+            "unit":"n/a",
+            "optional": true
+        }
+    ]
+}

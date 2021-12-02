@@ -1,0 +1,52 @@
+{
+    "name":"BinaryArtifact",
+    "context":"com.adlinktech.vision.artifacts",
+    "qosProfile":"telemetry",
+    "version":"2.2.1",
+    "description":"Message containing serialized file artifact",
+    "tags":[
+        {
+            "name":"source",
+            "description":"Artifact origin",
+            "kind":"STRING",
+            "unit":"n/a"
+        },
+        {
+            "name":"target",
+            "description":"(Optional) URI/ID of the intended recipient/use case, in case of a destination not on the DataRiver",
+            "kind":"STRING",
+            "unit":"n/a",
+            "optional": true
+        },
+        {
+            "name":"name",
+            "description":"Artifact name",
+            "kind":"STRING",
+            "unit":"n/a"
+        },
+        {
+            "name":"size",
+            "description":"Data size",
+            "kind":"UINT64",
+            "unit":"bytes"
+        },
+        {
+            "name":"kind",
+            "description":"Artifact description",
+            "kind":"STRING",
+            "unit":"n/a"
+        },
+        {
+            "name":"timestamp",
+            "description":"Updated/Created timestamp",
+            "kind":"UINT64",
+            "unit":"time"
+        },
+        {
+            "name":"artifact_data",
+            "description":"The Artifact",
+            "kind":"BYTE_SEQ",
+            "unit":"n/a"
+        }
+    ]
+}

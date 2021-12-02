@@ -1,0 +1,27 @@
+{
+    "name":"AlarmAcknowledge",
+    "context":"com.adlinktech.vision.system",
+    "qosProfile":"event",
+    "version":"2.2.1",
+    "description":"Confirmation of Alarm event. The stream_id is encapsulated in the flowId",
+    "tags":[
+        {
+            "name":"uuid",
+            "description":"Alarm ID for alarm being Acknowledged",
+            "kind":"STRING",
+            "unit":"uuidv4"
+        },
+        {
+            "name":"acknowledge",
+            "description":"State of alarm acknowledgement (True: Valid Alarm. False: Not valid)",
+            "kind":"BOOLEAN",
+            "unit":"n/a"
+        },
+        {
+            "name":"message",
+            "description":"Alarm information text",
+            "kind":"STRING",
+            "unit":"n/a"
+        }
+    ]
+}

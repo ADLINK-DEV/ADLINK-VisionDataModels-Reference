@@ -1,0 +1,200 @@
+[
+    {
+        "name":"DetectionPoint",
+        "context":"com.adlinktech.vision.inference",
+        "qosProfile":"telemetry",
+        "version":"2.2.1",
+        "description":"Inference engine results for object detection model outputting points. The flowId is expected to be in the form of <stream id>.<engine id>.",
+        "tags":[
+            {
+                "name":"frame_id",
+                "description":"ID of the input video frame fed to the inference engine",
+                "kind":"INT64",
+                "unit":"NUM"
+            },
+            {
+                "name":"model_id",
+                "description":"AI model identifier associated with the result",
+                "kind":"STRING",
+                "unit":"n/a",
+                "optional": true
+            },
+            {
+                "name":"detection_point_data",
+                "description":"List of Detection Point Data (the results)",
+                "kind":"MULTI_DIM_NVP",
+                "unit":"n/a",
+                "typedefinition":"DetectionPointData",
+                "dimensions": 1,
+                "optional": true
+            },
+            {
+                "name":"graph_data",
+                "description":"List of Graphs (the objects)",
+                "kind":"MULTI_DIM_NVP",
+                "unit":"n/a",
+                "typedefinition":"Graph",
+                "dimensions": 1,
+                "optional": true
+            }
+        ]
+    },
+    {
+        "typedefinition": "DetectionPointData",
+        "tags":[
+            {
+                "name":"tracker_obj_id",
+                "description":"Detected object id",
+                "kind":"STRING",
+                "unit":"uuidv4",
+                "optional": true
+            },
+            {
+                "name":"super_category_id",
+                "description":"Super category/class ID",
+                "kind":"STRING",
+                "unit":"n/a",
+                "optional": true
+            },
+            {
+                "name":"super_category_label",
+                "description":"Human interpreted super category name",
+                "kind":"STRING",
+                "unit":"n/a",
+                "optional": true
+            },
+            {
+                "name":"category_id",
+                "description":"Classification category/class ID",
+                "kind":"STRING",
+                "unit":"n/a",
+                "optional": true
+            },
+            {
+                "name":"category_label",
+                "description":"Human interpreted category name",
+                "kind":"STRING",
+                "unit":"n/a",
+                "optional": true
+            },
+            {
+                "name":"x",
+                "description":"Center X Coordinate (% from 0,0)",
+                "kind":"FLOAT64",
+                "unit":"Percentage"
+            },
+            {
+                "name":"y",
+                "description":"Center Y Coordinate (% from 0,0)",
+                "kind":"FLOAT64",
+                "unit":"Percentage"
+            },
+            {
+                "name":"radius",
+                "description":"Size of the point (% of image width)",
+                "kind":"FLOAT64",
+                "unit":"Percentage"
+            },
+            {
+                "name":"probability",
+                "description":"Network confidence",
+                "kind":"FLOAT64",
+                "unit":"Percentage",
+                "optional": true
+            },
+            {
+                "name":"tracker_probability",
+                "description":"Tracker confidence",
+                "kind":"FLOAT64",
+                "unit":"Percentage",
+                "optional": true
+            },
+            {
+                "name":"color",
+                "description":"Detection point color",
+                "kind":"STRING",
+                "unit":"Hex Code #RRGGBB",
+                "optional": true
+            },
+            {
+                "name":"metadata",
+                "description":"Buffer for extra inference metadata",
+                "kind":"STRING",
+                "unit":"n/a",
+                "optional": true
+            },
+            {
+                "name":"inference_id",
+                "description":"Unique inference identifier",
+                "kind":"STRING",
+                "unit":"uuidv4",
+                "optional": true
+            },
+            {
+                "name":"parent_inference_id",
+                "description":"Identifier referencing a parent inference node or result",
+                "kind":"STRING",
+                "unit":"uuidv4",
+                "optional": true
+            }
+        ]
+    },
+    {
+        "typedefinition": "Graph",
+        "tags":[
+            {
+                "name":"category_id",
+                "description":"Graph category/class ID",
+                "kind":"STRING",
+                "unit":"n/a",
+                "optional": true
+            },
+            {
+                "name":"category_label",
+                "description":"Human interpreted category name",
+                "kind":"STRING",
+                "unit":"n/a",
+                "optional": true
+            },
+            {
+                "name":"directed",
+                "description":"Determines if this graph is directed",
+                "kind":"BOOLEAN",
+                "unit":"n/a",
+                "optional": true
+            },
+            {
+                "name":"layout",
+                "description":"List of Graph edges representing this graph",
+                "kind":"MULTI_DIM_NVP",
+                "unit":"n/a",
+                "typedefinition":"GraphEdge",
+                "dimensions": 1
+            }
+        ]
+    },
+    {
+        "typedefinition": "GraphEdge",
+        "tags":[
+            {
+                "name":"origin_vertex",
+                "description":"A vertex which will serve as the origin",
+                "kind":"UINT64",
+                "unit":"An index of a DetectionPointData"
+            },
+            {
+                "name":"destination_vertex",
+                "description":"A vertex which will serve as the destination",
+                "kind":"UINT64",
+                "unit":"An index of a DetectionPointData"
+            },
+            {
+                "name":"label",
+                "description":"Label associated with this edge",
+                "kind":"STRING",
+                "unit":"n/a",
+                "optional": true
+            }
+        ]
+    }
+]
