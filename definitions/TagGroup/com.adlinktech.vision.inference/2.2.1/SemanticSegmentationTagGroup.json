@@ -3,7 +3,7 @@
         "name": "SemanticSegmentation",
         "context": "com.adlinktech.vision.inference",
         "qosProfile": "telemetry",
-        "version": "2.2.0",
+        "version": "2.2.1",
         "description": "Inference engine results for semantic segmentation model. The flowId is expected to be in the form of <stream id>.<engine id>.",
         "tags": [
             {
