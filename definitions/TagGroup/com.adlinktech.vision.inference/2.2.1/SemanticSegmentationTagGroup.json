@@ -104,6 +104,12 @@
         "typedefinition": "SegmentationCategory",
         "tags": [
             {
+                "name": "mask_value",
+                "description": "Pixel value in segmentation mask",
+                "kind": "BYTE",
+                "unit": "n/a"
+            },
+            {
                 "name": "super_category_id",
                 "description": "Super category/class ID",
                 "kind": "STRING",
