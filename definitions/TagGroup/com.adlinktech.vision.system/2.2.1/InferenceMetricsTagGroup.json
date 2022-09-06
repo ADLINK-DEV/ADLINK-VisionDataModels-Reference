@@ -1,0 +1,113 @@
+[
+    {
+        "name":"InferenceMetrics",
+        "context":"com.adlinktech.vision.system",
+        "qosProfile":"bestEffortTelemetry",
+        "version":"2.2.1",
+        "description":"Inference Engine processing metrics. The stream_id is encapsulated in the flowId",
+        "tags":[
+            {
+                "name":"engine_id",
+                "description":"Engine Flow ID",
+                "kind":"STRING",
+                "unit":"UUID"
+            },
+            {
+                "name":"frame_id",
+                "description":"Processed frame ID",
+                "kind":"INT64",
+                "unit":"NUM"
+            },
+            {
+                "name":"stage",
+                "description":"Pipeline stage identifier",
+                "kind":"STRING",
+                "unit":"n/a"
+            },
+            {
+                "name":"start",
+                "description":"App read VideoFrame from the Data River",
+                "kind":"NVP_SEQ",
+                "unit":"n/a",
+                "typedefinition":"Timestamp"
+            },
+            {
+                "name":"pre_processor",
+                "description":"Time spent preparing frame for AI inference",
+                "kind":"NVP_SEQ",
+                "unit":"n/a",
+                "typedefinition":"TimeMetric"
+            },
+            {
+                "name":"inference",
+                "description":"Time spent executing inference",
+                "kind":"NVP_SEQ",
+                "unit":"n/a",
+                "typedefinition":"TimeMetric"
+            },
+            {
+                "name":"post_processor",
+                "description":"Time spent processing inference results",
+                "kind":"NVP_SEQ",
+                "unit":"n/a",
+                "typedefinition":"TimeMetric"
+            },
+            {
+                "name":"river_write",
+                "description":"App wrote inference results to the Data River",
+                "kind":"NVP_SEQ",
+                "unit":"n/a",
+                "typedefinition":"Timestamp"
+            }
+        ]
+    },
+    {
+        "typedefinition": "Timestamp",
+        "tags":[
+            {
+                "name":"seconds",
+                "description":"Represents seconds of UTC time since Unix epoch",
+                "kind":"INT64",
+                "unit":"n/a"
+            },
+            {
+                "name":"nanos",
+                "description":"Non-negative fractions of a second at nanosecond resolution. Negative second values with fractions must still have non-negative nanos values that count forward in time. Must be from 0 to 999,999,999 inclusive.",
+                "kind":"INT32",
+                "unit":"n/a"
+            }
+        ]
+    },
+    {
+        "typedefinition": "TimeMetric",
+        "tags":[
+            {
+                "name":"start",
+                "description":"Metric execution begin timestamp",
+                "kind":"NVP_SEQ",
+                "unit":"n/a",
+                "typedefinition":"Timestamp"
+            },
+            {
+                "name":"end",
+                "description":"Metric execution complete timestamp",
+                "kind":"NVP_SEQ",
+                "unit":"n/a",
+                "typedefinition":"Timestamp"
+            },
+            {
+                "name":"avg",
+                "description":"Metric average",
+                "kind":"FLOAT32",
+                "unit":"n/a",
+                "optional": true
+            },
+            {
+                "name":"active",
+                "description":"Specifies whether or not this metric was active in the processing loop",
+                "kind":"BOOLEAN",
+                "unit":"n/a"
+            }
+        ]
+    }
+]
